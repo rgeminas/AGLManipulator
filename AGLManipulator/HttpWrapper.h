@@ -6,7 +6,7 @@
 
 namespace agl
 {
-	std::wstring
+	std::string
 	ReadHttpData(const std::wstring& server,
 			const std::wstring& resource,
 			const std::wstring& method = L"GET");
