@@ -11,6 +11,7 @@ namespace agl
 	std::string
 	ReadHttpData(const std::wstring& server,
 			const std::wstring& resource,
+			int port,
 			const std::wstring& method)
 	{
 		DWORD dwSize = 0;
@@ -31,7 +32,7 @@ namespace agl
 		// Specify an HTTP server.
 		if (hSession)
 			hConnect = WinHttpConnect(hSession, server.c_str(),
-			INTERNET_DEFAULT_HTTP_PORT, 0);
+			port, 0);
 
 		// Create an HTTP request handle.
 		if (hConnect)
@@ -82,7 +83,7 @@ namespace agl
 				}
 				else
 				{
-					Log(L"%s", pszOutBuffer);
+					//Log(L"%s", pszOutBuffer);
 					// Data in vFileContent
 					vFileContent.push_back(pszOutBuffer);
 				}

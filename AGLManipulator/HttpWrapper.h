@@ -9,6 +9,7 @@ namespace agl
 	std::string
 	ReadHttpData(const std::wstring& server,
 			const std::wstring& resource,
+			int port=80,
 			const std::wstring& method = L"GET");
 }
 #endif // AGL_HTTP_WRAPPER_H
